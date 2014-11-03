@@ -1,0 +1,120 @@
+@LoadingThrobber_size: 64px;
+
+.LoadingThrobber {
+        position:relative;
+        width: @LoadingThrobber_size;
+        height: @LoadingThrobber_size;
+
+        > div {
+                position:absolute;
+                background-color:#000000;
+                width:15px;
+                height:15px;
+                -moz-border-radius:10px;
+                -moz-animation-name:LoadingThrobber;
+                -moz-animation-duration:1.04s;
+                -moz-animation-iteration-count:infinite;
+                -moz-animation-direction:linear;
+                -webkit-border-radius:10px;
+                -webkit-animation-name:LoadingThrobber;
+                -webkit-animation-duration:1.04s;
+                -webkit-animation-iteration-count:infinite;
+                -webkit-animation-direction:linear;
+                border-radius:10px;
+                animation-name:LoadingThrobber;
+                animation-duration:1.04s;
+                animation-iteration-count:infinite;
+                animation-direction:linear;
+        }
+
+        > .g1 {
+                left:0;
+                top:25px;
+                -moz-animation-delay:0.39s;
+                -webkit-animation-delay:0.39s;
+                animation-delay:0.39s;
+        }
+
+        > .g2 {
+                left:7px;
+                top:7px;
+                -moz-animation-delay:0.52s;
+                -webkit-animation-delay:0.52s;
+                animation-delay:0.52s;
+        }
+
+        > .g3 {
+                top:0;
+                left:25px;
+                -moz-animation-delay:0.65s;
+                -webkit-animation-delay:0.65s;
+                animation-delay:0.65s;
+        }
+
+        > .g4 {
+                right:7px;
+                top:7px;
+                -moz-animation-delay:0.78s;
+                -webkit-animation-delay:0.78s;
+                animation-delay:0.78s;
+        }
+
+        > .g5 {
+                right:0;
+                top:25px;
+                -moz-animation-delay:0.91s;
+                -webkit-animation-delay:0.91s;
+                animation-delay:0.91s;
+        }
+
+        > .g6 {
+                right:7px;
+                bottom:7px;
+                -moz-animation-delay:1.04s;
+                -webkit-animation-delay:1.04s;
+                animation-delay:1.04s;
+        }
+
+        > .g7 {
+                left:25px;
+                bottom:0;
+                -moz-animation-delay:1.17s;
+                -webkit-animation-delay:1.17s;
+                animation-delay:1.17s;
+        }
+
+        > .g8 {
+                left:7px;
+                bottom:7px;
+                -moz-animation-delay:1.3s;
+                -webkit-animation-delay:1.3s;
+                animation-delay:1.3s;
+        }
+}
+
+@-moz-keyframes LoadingThrobber {
+        0%{
+                -moz-transform:scale(1)}
+
+        100%{
+                -moz-transform:scale(.3)}
+
+}
+
+@-webkit-keyframes LoadingThrobber {
+        0%{
+                -webkit-transform:scale(1)}
+
+        100%{
+                -webkit-transform:scale(.3)}
+
+}
+
+@keyframes LoadingThrobber {
+        0%{
+                transform:scale(1)}
+
+        100%{
+                transform:scale(.3)}
+
+}

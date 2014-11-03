@@ -1,0 +1,77 @@
+@import "../../swissarmyknife/swissarmyknife.less";
+@import "layout.less";
+@import "typography.less";
+
+html.BaseDocument {
+        margin: 0;
+        padding: 0;
+        
+        > body {
+                margin: 0;
+                padding: 0;
+                min-width: @baseWidth;
+                overflow-y: scroll; // always show a scrollbar to avoid the centered page
+                                    // from jumping around when navigating between pages.
+
+                > .fader {
+                        display: bock;
+                        position: fixed;
+                        z-index: 9999;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        cursor: default;
+                }
+                
+                > .header {
+                        position: relative;
+
+                        > .wrap {
+                                .clearfix();
+                                position: relative;
+                                margin: 0 auto;
+                                width: @baseWidth;
+                                min-height: 175px;
+                                z-index: 1;
+                        }
+                }
+
+                > .content {
+                        .clearfix();
+                        margin: 0 auto;
+                        width: @baseWidth;
+                }
+                
+                > .footer {
+                        position: relative;
+
+                        > .wrap {
+                                .clearfix();
+                                position: relative;
+                                min-height: 100px;
+                                margin: 0 auto;
+                                width: @baseWidth;
+                        }
+                }
+
+                > .LoadingThrobber {
+                        position: fixed;
+                        left: 5px;
+                        top: 5px;
+                        pointer-events: none;
+                        transition: opacity 1s;
+                        opacity: 0;
+                        z-index: 1000;
+                }
+        }
+
+
+        &.stateTransitionPending > body {
+                > .LoadingThrobber {
+                        transition: opacity 5s;
+                        opacity: 1;
+                }
+        }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "dealport",
+  "author": "Joris van der Wel <joris@jorisvanderwel.com>",
+  "description": "DealPort : dealport.co",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://dev1.up2serve.com:82/dealintelligence/dealport.git"
+  },
+  "main": "./lib/server.js",
+  "scripts": {
+    "prestart": "grunt --stack",
+    "start": "node lib/server.js"
+  },
+  "dependencies": {
+    "bluebird": "^2.3.10",
+    "deep-equal": "^0.2.1",
+    "domv": "^0.0.0",
+    "engine.io": "^1.4.0",
+    "es6-map": "^0.1.1",
+    "express": "^4.9.0",
+    "grunt-cli": "^0.1.13",
+    "image-size": "^0.3.5",
+    "inherits": "^2.0.1",
+    "morgan": "^1.3.0",
+    "primus": "^2.4.8",
+    "primus-emitter": "^3.0.3",
+    "static-reference": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^5.12.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.0.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.11.4",
+    "stylerefs": "^0.1.6"
+  },
+  "jshintConfig": {
+    "node": true,
+    "bitwise": true,
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "freeze": true,
+    "immed": true,
+    "indent": 8,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "nonbsp": true,
+    "nonew": true,
+    "quotmark": "single",
+    "undef": true,
+    "unused": "vars",
+    "strict": true,
+    "laxbreak": true,
+    "predef": [
+      "-Map"
+    ]
+  }
+}

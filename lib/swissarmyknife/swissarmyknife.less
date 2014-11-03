@@ -1,0 +1,93 @@
+@import "bootstrap/mixins/clearfix.less";
+@import "bootstrap/mixins/gradients.less";
+@import "bootstrap/mixins/hide-text.less";
+@import "bootstrap/mixins/vendor-prefixes.less";
+
+.size(@size) {
+        width: @size;
+        height: @size;
+}
+
+.size(@width; @height) {
+        width: @width;
+        height: @height;
+}
+
+.imageDimension(@image) {
+        @imageUrl: @image;
+        @imageDimension_w : ~`function()
+        {
+                var path;
+                var imageSize;
+                var rootpath;
+                try
+                {
+                        path = process.mainModule.require('path');
+                        imageSize = process.mainModule.require('image-size');
+                }
+                catch (err)
+                {
+                        console.warn('Main module is', process.mainModule.filename);
+                        throw err;
+                }
+
+                // (does not work with css escape sequences)
+                img = this.imageUrl.toJS().replace(/^url\("?([^"]*)"?\)$/, '$1');
+                img = path.resolve(img);
+                img = img.replace(/\\/g, '/');
+                img = img.replace(/^[A-Z]+:/, function(match) { return match.toLowerCase(); });
+                global._mixinImageDimension = imageSize(img);
+                global._mixinImageDimension.path = img;
+                return global._mixinImageDimension.width + 'px';
+        }.call(this)`;
+
+        @imageDimension_h : ~`function()
+        {
+                return global._mixinImageDimension.height + 'px';
+        }.call(this)`;
+
+        @imageDimension_resolved : `function()
+        {
+                try
+                {
+                        return global._mixinImageDimension.path;
+                }
+                finally
+                {
+                        delete global._mixinImageDimension;
+                }
+        }.call(this)`;
+
+        @imageDimension : @imageDimension_w, @imageDimension_h, @imageDimension_resolved;
+}
+
+
+.imageSize(@image) {
+        .imageDimension(@image);
+        width: extract(@imageDimension, 1);
+        height: extract(@imageDimension, 2);
+}
+
+.backgroundImageWithSize(@image) {
+        .imageDimension(@image);
+        width: extract(@imageDimension, 1);
+        height: extract(@imageDimension, 2);
+        background-image: data-uri(extract(@imageDimension, 3));
+}
+
+.backgroundImageWithMinimumSize(@image) {
+        .imageDimension(@image);
+        min-width: extract(@imageDimension, 1);
+        min-height: extract(@imageDimension, 2);
+        background-image: data-uri(extract(@imageDimension, 3));
+}
+
+.imageFitWidth() {
+        // IE8+
+        width: auto\9;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+}
