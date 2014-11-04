@@ -9,7 +9,6 @@ html.BaseDocument {
         > body {
                 margin: 0;
                 padding: 0;
-                min-width: @baseWidth;
                 overflow-y: scroll; // always show a scrollbar to avoid the centered page
                                     // from jumping around when navigating between pages.
 
@@ -32,7 +31,7 @@ html.BaseDocument {
                                 .clearfix();
                                 position: relative;
                                 margin: 0 auto;
-                                width: @baseWidth;
+                                max-width: @baseWidth;
                                 min-height: 175px;
                                 z-index: 1;
                         }
@@ -41,7 +40,7 @@ html.BaseDocument {
                 > .content {
                         .clearfix();
                         margin: 0 auto;
-                        width: @baseWidth;
+                        max-width: @baseWidth;
                 }
                 
                 > .footer {
@@ -52,7 +51,7 @@ html.BaseDocument {
                                 position: relative;
                                 min-height: 100px;
                                 margin: 0 auto;
-                                width: @baseWidth;
+                                max-width: @baseWidth;
                         }
                 }
 

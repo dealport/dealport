@@ -1,0 +1,22 @@
+@import "../../swissarmyknife/swissarmyknife";
+@import "layout.less";
+
+.CompanyGrid {
+        .clearfix();
+        list-style-type: none;
+        margin: 0 -@baseSpacing;
+        padding: 0;
+
+        > .CompanyGridItem {
+                float: left;
+                @width: @baseWidth / 5 - @baseSpacing - 2; // -2 for the border
+                width: @width;
+                min-height: @width;
+                margin: @baseSpacing/2;
+                //226 naar 206
+
+                &:nth-child(5n+1) {
+                        clear: left;
+                }
+        }
+}
