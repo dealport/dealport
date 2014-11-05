@@ -10,13 +10,8 @@
         > .CompanyGridItem {
                 float: left;
                 @width: @baseWidth / 4 - @baseSpacing - 2; // -2 for the border
-                width: @width;
-                min-height: @width + 75px;
+                width: @width; // 307 - 286 = 21
+                min-height: @width;
                 margin: @baseSpacing/2;
-                //226 naar 206
-
-                &:nth-child(4n+1) {
-                        clear: left;
-                }
         }
 }
