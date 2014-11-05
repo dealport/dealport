@@ -9,13 +9,13 @@
 
         > .CompanyGridItem {
                 float: left;
-                @width: @baseWidth / 5 - @baseSpacing - 2; // -2 for the border
+                @width: @baseWidth / 4 - @baseSpacing - 2; // -2 for the border
                 width: @width;
-                min-height: @width;
+                min-height: @width + 75px;
                 margin: @baseSpacing/2;
                 //226 naar 206
 
-                &:nth-child(5n+1) {
+                &:nth-child(4n+1) {
                         clear: left;
                 }
         }

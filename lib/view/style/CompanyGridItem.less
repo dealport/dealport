@@ -1,13 +1,38 @@
 @import "../../swissarmyknife/swissarmyknife";
 @import "layout.less";
+@import "typography.less";
 
 .CompanyGridItem {
         border: 1px solid gray;
         border-radius: 5px;
         padding: @baseSpacing;
         .box-sizing(border-box);
+        font-size: @fsize_normal;
+
+        > .CompanyLogo {
+                float: left;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                margin: 0 8px 8px 0;
+        }
 
         > .title {
                 font-size: 100%;
+                margin: 0 0 1em 0;
+                word-break: break-all;
+        }
+
+        > .payoff {
+                margin: 1em 0;
+        }
+
+        > .CompanySectorsList {
+                margin: 1em 0;
+        }
+
+        > .CompanyShortMetaTable {
+                margin: 1em 0 0 0;
+                width: 100%;
         }
 }
