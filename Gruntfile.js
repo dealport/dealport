@@ -27,7 +27,7 @@ module.exports = function(grunt)
                                 filter: 'less'
                         },
                         build: {
-                                src: ['lib/server.js', 'lib/browser-init.js'],
+                                src: ['lib/browser-init.js'],
                                 dest: 'generated-web/bundle.less'
                         }
                 },
