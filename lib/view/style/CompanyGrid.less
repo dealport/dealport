@@ -7,11 +7,23 @@
         margin: 0 -@baseSpacing;
         padding: 0;
 
+        @itemSize:  @baseWidth / 4 - @baseSpacing - 2; // -2 for the border
+
         > .CompanyGridItem {
                 float: left;
-                @width: @baseWidth / 4 - @baseSpacing - 2; // -2 for the border
-                width: @width; // 307 - 286 = 21
-                min-height: @width;
+                width: @itemSize; // 307 - 286 = 21
+                min-height: @itemSize;
                 margin: @baseSpacing/2;
+        }
+
+        > .CompanyGridItemPlaceholder {
+                float: left;
+                margin: @baseSpacing/2;
+
+                > .StateAnchor {
+                        line-height: @itemSize - @baseSpacing * 2;
+                        width: @itemSize;
+                        height: @itemSize;
+                }
         }
 }

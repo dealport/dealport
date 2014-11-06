@@ -1,0 +1,25 @@
+@import "../../swissarmyknife/swissarmyknife";
+@import "layout.less";
+@import "typography.less";
+
+.CompanyGridItemPlaceholder {
+        > .StateAnchor {
+                border: 2px dashed gray;
+                border-radius: 5px;
+                .box-sizing(border-box);
+                font-size: @fsize_normal;
+                text-align: center;
+                display: block;
+                padding: @baseSpacing;
+                .box-sizing(border-box);
+
+                > .text {
+                        vertical-align: middle;
+                        display: inline-block;
+                        line-height: 1.2;
+                        font-size: 200%;
+                        color: gray;
+                        text-decoration: none !important;
+                }
+        }
+}
