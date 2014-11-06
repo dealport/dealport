@@ -1,0 +1,51 @@
+@import "../../swissarmyknife/swissarmyknife";
+@import "./layout";
+@import "./typography";
+
+.SubmitForm {
+        .clearfix();
+        font-size: @fsize_normal;
+        background-color: white;
+        padding: @baseSpacing;
+
+        > label {
+                display: block;
+                margin: 5px 0;
+
+                > span,
+                > input[type=text],
+                > input[type=url] {
+                        display: inline-block;
+                        width: 50%;
+                        .box-sizing(border-box);
+                }
+
+                > span:after {
+                        content: ": ";
+                }
+
+                &.multiline {
+                        > span {
+                                display: block;
+                                width: auto;
+                        }
+
+                        > textarea {
+                                display: block;
+                                width: 100%;
+                                min-height: 5em;
+                        }
+                }
+        }
+
+        > hr {
+                margin: @baseSpacing;
+        }
+
+        > .submit {
+                margin: 25px 0 0 0;
+                text-align: center;
+        }
+}
+
+// http://localhost:1337/submit

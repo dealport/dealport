@@ -2,5 +2,17 @@
 @import "../../../swissarmyknife/swissarmyknife.less";
 
 .HomePage {
-
+        > .SubmitForm {
+                position: relative;
+                z-index: 10000;
+                @media screen and (min-width: 800px) {
+                        position: fixed;
+                        top: 10%;
+                        left: 50%;
+                        width: 500px;
+                        margin-left: 500px / -2;
+                        border: 1px solid gray;
+                        border-radius: 5px;
+                }
+        }
 }
