@@ -3,6 +3,7 @@
 @import "./typography";
 
 .SubmitForm {
+        position: relative;
         .clearfix();
         font-size: @fsize_normal;
         background-color: white;
@@ -61,6 +62,20 @@
         > .errorMessage {
                 color: red;
         }
-}
 
-// http://localhost:1337/submit
+        > .thanks {
+                position: absolute;
+                margin: 0;
+                left: 0; right: 0;
+                top: 0; bottom: 0;
+                background-color: white;
+                background-color: rgba(255, 255, 255, 0.9);
+                z-index: 1;
+                text-align: center;
+
+                > p {
+                        margin: 150px 0 1em 0;
+                }
+        }
+
+}
