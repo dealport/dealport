@@ -4,10 +4,11 @@
 .CompanyGrid {
         .clearfix();
         list-style-type: none;
-        margin: 0 -@baseSpacing;
+        margin: -@baseSpacing/2;
         padding: 0;
 
-        @itemSize:  @baseWidth / 4 - @baseSpacing - 2; // -2 for the border
+        // there are 3 gaps (@baseSpacing) which has to be divided over 4 columns
+        @itemSize: @baseWidth / 4 - (@baseSpacing * 3 / 4);
 
         > .CompanyGridItem {
                 float: left;

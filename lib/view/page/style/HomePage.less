@@ -2,6 +2,16 @@
 @import "../../../swissarmyknife/swissarmyknife.less";
 
 .HomePage {
+        > .intro {
+                border: 1px solid gray;
+                border-radius: 5px;
+                margin: 0 0 @baseSpacing 0;
+                padding: @baseSpacing;
+                .box-sizing(border-box);
+                font-size: @fsize_normal;
+                background-color: white;
+        }
+
         > .SubmitForm {
                 position: relative;
                 z-index: 10000;
