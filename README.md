@@ -32,8 +32,8 @@ See lib/server-config.js for valid config keys and their default values. To set 
     
 Or you can create a `.npmrc` file in the project root or in your home directory:
 
-    mongoUri:listenHostname=0.0.0.0
-    mongoUri:mongoUri=foo
+    dealport:listenHostname=0.0.0.0
+    dealport:mongoUri=foo
 
 Grunt
 -----
