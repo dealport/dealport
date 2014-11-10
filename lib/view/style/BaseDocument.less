@@ -4,7 +4,7 @@
 
 html.BaseDocument {
         margin: 0;
-        padding: @baseSpacing;
+        background-color: #eeeeee;
         
         > body {
                 margin: 0;
@@ -26,14 +26,23 @@ html.BaseDocument {
                 
                 > .header {
                         position: relative;
+                        background-color: #3b5999;
 
                         > .wrap {
                                 .clearfix();
                                 position: relative;
                                 margin: 0 auto;
                                 max-width: @baseWidth;
-                                min-height: 175px;
+                                min-height: 60px;
                                 z-index: 1;
+
+                                > .title {
+                                        font-size: 24px;
+                                        color: white;
+                                        margin: 13px 0 0 0;
+                                        padding: 0;
+                                        text-align: center;
+                                }
                         }
                 }
 
@@ -41,6 +50,7 @@ html.BaseDocument {
                         .clearfix();
                         margin: 0 auto;
                         max-width: @baseWidth;
+                        padding: @baseSpacing;
                 }
                 
                 > .footer {
