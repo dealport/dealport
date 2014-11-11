@@ -28,19 +28,25 @@ html.BaseDocument {
                 > .header {
                         position: relative;
                         background-color: #3b5999;
+                        color: white;
 
                         > .wrap {
                                 .clearfix();
                                 position: relative;
                                 margin: 0 auto;
                                 max-width: @baseWidth;
-                                min-height: 60px;
                                 z-index: 1;
+                                padding: 15px 0;
+                                line-height: 24px;
+
+                                > .userName {
+                                        float: right;
+                                        margin: 0;
+                                }
 
                                 > .title {
                                         font-size: 24px;
-                                        color: white;
-                                        margin: 13px 0 0 0;
+                                        margin: 0;
                                         padding: 0;
                                         text-align: center;
                                 }
