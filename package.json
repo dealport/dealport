@@ -11,7 +11,8 @@
   "main": "./lib/server.js",
   "scripts": {
     "prestart": "grunt --stack",
-    "start": "node lib/server.js"
+    "start": "node lib/server.js",
+    "start-no-css": "grunt --stack default-no-css && node lib/server.js"
   },
   "dependencies": {
     "bluebird": "^2.3.10",
