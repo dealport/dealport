@@ -29,6 +29,7 @@ html.BaseDocument {
                         position: relative;
                         background-color: #3b5999;
                         color: white;
+                        a { color: white }
 
                         > .wrap {
                                 .clearfix();
@@ -39,19 +40,38 @@ html.BaseDocument {
                                 padding: 15px 0;
                                 line-height: 24px;
 
-                                > .userName,
-                                > .loginAnchor {
-                                        color: inherit;
-                                        float: right;
-                                        margin: 0;
+                                > div {
+                                        min-height: 1px;
+                                        min-width: 200px;
+                                        .threeColumn();
                                 }
 
-                                > .title {
-                                        font-size: 24px;
-                                        margin: 0;
-                                        padding: 0;
+                                > .center {
                                         text-align: center;
+                                        > .title {
+                                                font-size: 24px;
+                                                margin: 0;
+                                                padding: 0;
+                                        }
                                 }
+
+                                > .right {
+                                        text-align: right;
+                                }
+
+                                @media screen and (max-width: 600px) {
+                                        padding: @baseSpacing;
+
+                                        > div {
+                                                float: none;
+                                                min-height: 0;
+                                                min-width: 0;
+                                                margin: @baseSpacing 0;
+                                                width: auto;
+                                                text-align: left !important;
+                                        }
+                                }
+
                         }
                 }
 
