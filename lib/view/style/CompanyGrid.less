@@ -15,6 +15,13 @@
                 width: @itemSize; // 307 - 286 = 21
                 height: @itemSize;
                 margin: @baseSpacing/2;
+                .transition(opacity 1s ease);
+        }
+
+        &.editing {
+                > .CompanyGridItem:not(.canEdit) {
+                        opacity: 0.3;
+                }
         }
 
         > .CompanyGridItemPlaceholder {
