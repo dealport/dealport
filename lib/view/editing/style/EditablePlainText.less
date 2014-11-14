@@ -1,7 +1,13 @@
 .EditablePlainText {
+        position: relative;
+
         &.editing {
                 outline: 1px dashed gray;
 
                 &:focus { outline-style: solid !important; }
+        }
+
+        &.singleline > br {
+                display: none !important; // contenteditable quirkyness
         }
 }
