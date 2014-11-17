@@ -47,6 +47,19 @@ html.BaseDocument {
                                         .threeColumn();
                                 }
 
+                                > .left {
+                                        > .lastSave {
+                                                margin: 0 10px 0 0;
+                                        }
+
+                                        > .savingThrobber {
+                                                display: inline-block;
+                                                vertical-align: middle;
+                                                transition: opacity 1s;
+                                                opacity: 0;
+                                        }
+                                }
+
                                 > .center {
                                         text-align: center;
                                         > .title {
@@ -117,4 +130,10 @@ html.BaseDocument {
                         opacity: 1;
                 }
         }
+
+        &.savingPending > body > .header .savingThrobber {
+                transition: opacity 5s !important;
+                opacity: 1 !important;
+        }
+
 }
