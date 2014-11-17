@@ -41,6 +41,30 @@ module.exports = function(grunt)
                                 src: ['generated-web/bundle.less'],
                                 dest: 'generated-web/bundle.css'
                         }
+                },
+                compress: {
+                        bundlejs: {
+                                options: {
+                                        mode: 'gzip',
+                                        level: 9,
+                                        pretty: true
+                                },
+                                files: [{
+                                        src: ['generated-web/bundle.js'],
+                                        dest: 'generated-web/bundle.js.gz'
+                                }]
+                        },
+                        bundlecss: {
+                                options: {
+                                        mode: 'gzip',
+                                        level: 9,
+                                        pretty: true
+                                },
+                                files: [{
+                                        src: ['generated-web/bundle.css'],
+                                        dest: 'generated-web/bundle.css.gz'
+                                }]
+                        }
                 }
         });
 
@@ -54,9 +78,10 @@ module.exports = function(grunt)
         grunt.loadNpmTasks('grunt-browserify');
         grunt.loadNpmTasks('stylerefs');
         grunt.loadNpmTasks('grunt-contrib-less');
+        grunt.loadNpmTasks('grunt-contrib-compress');
 
 
         grunt.registerTask('lint', ['jshint']);
-        grunt.registerTask('default-no-css', ['jshint', 'primuslib', 'browserify']);
-        grunt.registerTask('default', ['jshint', 'primuslib', 'browserify', 'stylerefs', 'less']);
+        grunt.registerTask('default-no-css', ['jshint', 'primuslib', 'browserify', 'compress:bundlejs']);
+        grunt.registerTask('default', ['jshint', 'primuslib', 'browserify', 'compress:bundlejs', 'stylerefs', 'less', 'compress:bundlecss']);
 };

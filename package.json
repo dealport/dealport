@@ -15,6 +15,7 @@
     "start-no-css": "grunt --stack default-no-css && node lib/server.js"
   },
   "dependencies": {
+    "accepts": "^1.1.3",
     "bloody-escapehtml": "^1.1.0",
     "bluebird": "^2.3.10",
     "body-parser": "^1.9.2",
@@ -44,6 +45,7 @@
     "browserify": "^5.12.1",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.0.1",
+    "grunt-contrib-compress": "^0.12.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-less": "^0.11.4",
