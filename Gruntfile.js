@@ -82,6 +82,7 @@ module.exports = function(grunt)
 
 
         grunt.registerTask('lint', ['jshint']);
-        grunt.registerTask('default-no-css', ['jshint', 'primuslib', 'browserify', 'compress:bundlejs']);
+        grunt.registerTask('no-css', ['jshint', 'primuslib', 'browserify', 'compress:bundlejs']);
+        grunt.registerTask('no-lint', ['primuslib', 'browserify', 'compress:bundlejs', 'stylerefs', 'less', 'compress:bundlecss']);
         grunt.registerTask('default', ['jshint', 'primuslib', 'browserify', 'compress:bundlejs', 'stylerefs', 'less', 'compress:bundlecss']);
 };

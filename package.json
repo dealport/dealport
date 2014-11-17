@@ -12,7 +12,9 @@
   "scripts": {
     "prestart": "grunt --stack",
     "start": "node lib/server.js",
-    "start-no-css": "grunt --stack default-no-css && node lib/server.js"
+    "start-no-client": "grunt --stack lint && node lib/server.js",
+    "start-no-css": "grunt --stack no-css && node lib/server.js",
+    "start-no-lint": "grunt --stack no-lint && node lib/server.js"
   },
   "dependencies": {
     "accepts": "^1.1.3",
