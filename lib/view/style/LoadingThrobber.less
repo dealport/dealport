@@ -2,71 +2,71 @@
 
 @LoadingThrobber_size: 64px;
 
-.LoadingThrobber {
+.LoadingThrobber_circular(@color, @size, @speed) {
+        /* Source: "circular" at http://cssload.net/ */
         position: relative;
-        width: @LoadingThrobber_size;
-        height: @LoadingThrobber_size;
+        width: @size;
+        height: @size;
 
         > div {
                 position: absolute;
-                background-color: #000000;
-                width: 15px;
-                height: 15px;
-                border-radius: 10px;
-                .animation(LoadingThrobber 1.04s linear infinite);
+                background-color: @color;
+                width: round(@size * 15 / 66);
+                height: round(@size * 15 / 66);
+                border-radius: round(@size * 10 / 66);
+                .animation(LoadingThrobberCircular (@speed * 8 / 10) linear infinite);
         }
 
         > .g1 {
                 left: 0;
-                top: 25px;
-                .animation-delay(0.39s);
+                top: round(@size * 26 / 66);
+                .animation-delay(@speed * 3 / 10);
         }
 
         > .g2 {
-                left: 7px;
-                top: 7px;
-                .animation-delay(0.52s);
+                left: round(@size * 7 / 66);
+                top: round(@size * 7 / 66);
+                .animation-delay(@speed * 4 / 10);
         }
 
         > .g3 {
+                left: round(@size * 26 / 66);
                 top: 0;
-                left: 25px;
-
-                .animation-delay(0.65s);
+                .animation-delay(@speed * 5 / 10);
         }
 
         > .g4 {
-                right: 7px;
-                top: 7px;
-                .animation-delay(0.78s);
+                right: round(@size * 7 / 66);
+                top: round(@size * 7 / 66);
+                .animation-delay(@speed * 6 / 10);
         }
 
         > .g5 {
                 right: 0;
-                top: 25px;
-                .animation-delay(0.91s);
+                top: round(@size * 26 / 66);
+                .animation-delay(@speed * 7 / 10);
         }
 
         > .g6 {
-                right: 7px;
-                bottom: 7px;
-                .animation-delay(1.04s);
+                right: round(@size * 7 / 66);
+                bottom: round(@size * 7 / 66);
+                .animation-delay(@speed * 8 / 10);
         }
 
         > .g7 {
-                left: 25px;
+                left: round(@size * 26 / 66);
                 bottom: 0;
-                .animation-delay(1.17s);
+                .animation-delay(@speed * 9 / 10);
         }
 
         > .g8 {
-                left: 7px;
-                bottom: 7px;
-                .animation-delay(1.3s);
+                left: round(@size * 7 / 66);
+                bottom: round(@size * 7 / 66);
+                .animation-delay(@speed * 10 / 10);
         }
 }
 
-@-webkit-keyframes LoadingThrobber {
+@-webkit-keyframes LoadingThrobberCircular {
         0% {
                 .scale(1);
         }
@@ -75,12 +75,20 @@
         }
 }
 
-@keyframes LoadingThrobber {
+@keyframes LoadingThrobberCircular {
         0% {
                 .scale(1);
         }
 
         100% {
                 .scale(.3);
+        }
+}
+
+.LoadingThrobber {
+        position: relative;
+
+        &.s50 {
+                .LoadingThrobber_circular(#FFFFFF, 50px, 1.3s);
         }
 }
