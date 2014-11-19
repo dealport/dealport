@@ -1,0 +1,36 @@
+.EditablePlainAnchor {
+        position: relative;
+}
+
+.EditablePlainAnchor_hrefEditPopup {
+        display: none; // set by script
+
+        position: fixed; // todo calculate position
+        top: 100px;
+        left: 50%; margin-left: 320px / -2;
+        @width: 320px - 5px*2 - 1px*2;
+        width: @width;
+
+        background-color: white;
+        -webkit-box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:    0 0 10px 0 rgba(50, 50, 50, 0.75);
+        box-shadow:         0 0 10px 0 rgba(50, 50, 50, 0.75);
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 10px 5px;
+        cursor: default;
+        z-index: 10;
+
+        > label {
+                > span {
+                        display: inline-block;
+                        width: 40px;
+                }
+
+                > input {
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                        width: @width - 40px;
+                }
+        }
+}
