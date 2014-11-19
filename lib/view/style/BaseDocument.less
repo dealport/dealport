@@ -83,15 +83,25 @@ html.BaseDocument {
                                 }
 
                                 @media screen and (max-width: 600px) {
-                                        padding: @baseSpacing;
+                                        padding: 3px;
 
                                         > div {
                                                 float: none;
                                                 min-height: 0;
                                                 min-width: 0;
-                                                margin: @baseSpacing 0;
+                                                margin: 0 0;
                                                 width: auto;
-                                                text-align: left !important;
+                                                text-align: center !important;
+                                        }
+
+                                        > .left {
+                                                display: none;
+                                        }
+
+                                        > .center {
+                                                > .title {
+                                                        font-size: 100%;
+                                                }
                                         }
                                 }
 
