@@ -3,6 +3,7 @@
 @import "typography.less";
 
 .CompanyGridItem {
+        position: relative;
         border: 1px solid gray;
         border-radius: 5px;
         padding: @baseSpacing;
@@ -37,5 +38,22 @@
         > .CompanyShortMetaTable {
                 margin: 8px 0 0 0;
                 width: 100%;
+        }
+
+        > .bottomButtons {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                border-radius: 5px;
+                text-align: center;
+
+                > .visible {
+                        &:not([data-value]) {
+                                color: #680000;
+                                font-weight: bold;
+                        }
+                }
         }
 }
