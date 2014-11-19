@@ -10,7 +10,7 @@ html.BaseDocument {
         
         > body {
                 margin: 0;
-                padding: 0;
+                padding: 56px 0 0 0;
                 overflow-y: scroll; // always show a scrollbar to avoid the centered page
                                     // from jumping around when navigating between pages.
 
@@ -27,7 +27,12 @@ html.BaseDocument {
                 }
                 
                 > .header {
-                        position: relative;
+                        position: absolute;
+                        position: fixed;
+                        top: 0;
+                        left: 0; width: 100%;
+                        z-index: 100;
+
                         background-color: #3b5999;
                         color: white;
                         a { color: white }
