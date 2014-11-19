@@ -12,6 +12,7 @@
   "scripts": {
     "prestart": "grunt --stack",
     "start": "while :; do node lib/server.js --extrastuffforprocesstitle; sleep 2; done",
+    "start-no-loop": "node lib/server.js",
     "start-no-client": "grunt --stack lint && node lib/server.js",
     "start-no-css": "grunt --stack no-css && node lib/server.js",
     "start-no-lint": "grunt --stack no-lint && node lib/server.js"
