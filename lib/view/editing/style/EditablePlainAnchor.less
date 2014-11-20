@@ -1,15 +1,18 @@
 .EditablePlainAnchor {
-        position: relative;
+
 }
 
 .EditablePlainAnchor_hrefEditPopup {
         display: none; // set by script
 
-        position: fixed; // todo calculate position
-        top: 100px;
-        left: 50%; margin-left: 320px / -2;
+        position: absolute;
+        top: 150px; margin-top : -50px;
+        left: 50% ;
         @width: 320px - 5px*2 - 1px*2;
         width: @width;
+
+        line-height: 20px;
+        font-size: 18px;
 
         background-color: white;
         -webkit-box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.75);
@@ -32,5 +35,9 @@
                         box-sizing: border-box;
                         width: @width - 40px;
                 }
+        }
+
+        @media screen and (max-width: 470px) {
+                left: 0 !important;
         }
 }
