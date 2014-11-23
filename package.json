@@ -43,6 +43,7 @@
     "primus": "^2.4.8",
     "primus-emitter": "^3.0.3",
     "primus-multiplex": "^3.0.3",
+    "readable-blob-stream": "0.0.0",
     "smtp-connection": "^1.0.2",
     "static-reference": "^1.0.0"
   },
