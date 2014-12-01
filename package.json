@@ -6,7 +6,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://dev1.up2serve.com:82/dealintelligence/dealport.git"
+    "url": "https://github.com/dealport/dealport.git"
   },
   "license": {
     "type": "AGPL",
