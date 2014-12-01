@@ -8,6 +8,10 @@
     "type": "git",
     "url": "https://dev1.up2serve.com:82/dealintelligence/dealport.git"
   },
+  "license": {
+    "type": "AGPL",
+    "url": "https://www.gnu.org/licenses/agpl.html"
+  },
   "main": "./lib/server.js",
   "scripts": {
     "prestart": "grunt --stack",
