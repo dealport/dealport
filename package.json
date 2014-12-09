@@ -50,7 +50,7 @@
     "readable-blob-stream": "0.0.0",
     "smtp-connection": "^1.0.2",
     "static-reference": "^1.0.0",
-    "stream-sequencer": "0.0.1"
+    "stream-sequencer": "^0.1.0"
   },
   "devDependencies": {
     "browserify": "^5.12.1",
