@@ -100,6 +100,76 @@ module.exports = function(grunt)
                 fs.writeFileSync('generated-web/primus.js', require('./lib/primus-server')().library());
         });
 
+        grunt.task.registerTask('companyimport', 'Import entries from the companyImport collection into company', function()
+        {
+                var P = require('bluebird');
+                var ObjectID = require('mongodb').ObjectID;
+                var model = require('./lib/model/mongo-init')(require('./lib/server-config'));
+
+                var done = this.async();
+
+                P.using(model.acquire(), function(db)
+                {
+                        return P.promisifyAll(db.companyImport.find({})).toArrayAsync()
+                        .map(function(companyImport)
+                        {
+                                return db.company.findOneAsync({
+                                        $or: [
+                                                {companyImportID: companyImport._id + ''},
+                                                {companyImportID: parseInt(companyImport._id, 10)}
+                                        ]
+                                })
+                                .then(function(company)
+                                {
+                                        var $set = {companyImportID: companyImport._id};
+
+                                        var keysToSet = Object.keys(companyImport).filter(function(key)
+                                        {
+                                                if (company &&
+                                                    key in company)
+                                                {
+                                                        return false;
+                                                }
+
+                                                switch(key)
+                                                {
+                                                        case 'name':
+                                                        case 'logoURL':
+                                                        case 'openForInvestment':
+                                                        case 'hiring':
+                                                        case 'sectors':
+                                                        case 'revenueModel':
+                                                        case 'payoff':
+                                                                return true;
+                                                }
+
+                                                return false;
+                                        });
+
+                                        keysToSet.forEach(function(key)
+                                        {
+                                                $set[key] = companyImport[key];
+                                        });
+
+                                        if (!company)
+                                        {
+                                                // new
+                                                $set._v = 0;
+                                                $set._type = 'http://sharejs.org/types/JSONv0';
+                                                $set._m = {mtime: 0, ctime: 0};
+                                        }
+
+                                        console.info('set %s on %s', keysToSet, company && company._id);
+                                        return db.company.updateAsync(
+                                                {_id: company && company._id || new ObjectID().toString()},
+                                                {$set: $set},
+                                                {upsert: true}
+                                        );
+                                });
+                        });
+                }).nodeify(done);
+        });
+
         grunt.loadNpmTasks('grunt-contrib-jshint');
         grunt.loadNpmTasks('grunt-browserify');
         grunt.loadNpmTasks('stylerefs');
