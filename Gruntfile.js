@@ -24,8 +24,6 @@
 
 module.exports = function(grunt)
 {
-        // TODO: versioning of generated bundle files, to be used when an error is reported.
-
         grunt.initConfig({
                 pkg: grunt.file.readJSON('package.json'),
                 jshint: {
@@ -90,6 +88,12 @@ module.exports = function(grunt)
                 }
         });
 
+        grunt.task.registerTask('mongoskin-workaround', function()
+        {
+                // delete mongoskin/node_modules/mongodb so that it uses our mongodb version instead
+                grunt.file.delete('./node_modules/mongoskin/node_modules/mongodb');
+        });
+
         grunt.task.registerTask('primuslib', 'Generate the primus client library', function()
         {
                 var fs = require('fs');
@@ -104,7 +108,7 @@ module.exports = function(grunt)
 
 
         grunt.registerTask('lint', ['jshint']);
-        grunt.registerTask('no-css', ['jshint', 'primuslib', 'browserify', 'compress:bundlejs']);
-        grunt.registerTask('no-lint', ['primuslib', 'browserify', 'compress:bundlejs', 'stylerefs', 'less', 'compress:bundlecss']);
-        grunt.registerTask('default', ['jshint', 'primuslib', 'browserify', 'compress:bundlejs', /*'stylerefs',*/ 'less', 'compress:bundlecss']);
+        grunt.registerTask('no-css', ['mongoskin-workaround', 'jshint', 'primuslib', 'browserify', 'compress:bundlejs']);
+        grunt.registerTask('no-lint', ['mongoskin-workaround', 'primuslib', 'browserify', 'compress:bundlejs', 'stylerefs', 'less', 'compress:bundlecss']);
+        grunt.registerTask('default', ['mongoskin-workaround', 'jshint', 'primuslib', 'browserify', 'compress:bundlejs', /*'stylerefs',*/ 'less', 'compress:bundlecss']);
 };
