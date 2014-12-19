@@ -180,5 +180,5 @@ module.exports = function(grunt)
         grunt.registerTask('lint', ['jshint']);
         grunt.registerTask('no-css', ['mongoskin-workaround', 'jshint', 'primuslib', 'browserify', 'compress:bundlejs']);
         grunt.registerTask('no-lint', ['mongoskin-workaround', 'primuslib', 'browserify', 'compress:bundlejs', 'stylerefs', 'less', 'compress:bundlecss']);
-        grunt.registerTask('default', ['mongoskin-workaround', 'jshint', 'primuslib', 'browserify', 'compress:bundlejs', /*'stylerefs',*/ 'less', 'compress:bundlecss']);
+        grunt.registerTask('default', ['mongoskin-workaround', 'jshint', 'primuslib', 'browserify', 'compress:bundlejs', 'stylerefs', 'less', 'compress:bundlecss']);
 };
