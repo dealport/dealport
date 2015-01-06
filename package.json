@@ -2,7 +2,7 @@
   "name": "dealport",
   "author": "Joris van der Wel <joris@jorisvanderwel.com>",
   "description": "DealPort : dealport.co",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
   "repository": {
     "type": "git",
