@@ -36,3 +36,9 @@
                 display: none !important; // contenteditable quirkyness
         }
 }
+
+a.EditablePlainText,
+span.EditablePlainText {
+        // make sure the cursor is not hidden by the outline
+        display: inline-block;
+}
