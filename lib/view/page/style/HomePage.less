@@ -26,13 +26,23 @@
 
 .HomePage {
         > .intro {
+                position: relative;
                 border: 1px solid gray;
                 border-radius: 5px;
                 margin: 0 0 @baseSpacing 0;
-                padding: @baseSpacing;
+                padding: @baseSpacing 75px @baseSpacing @baseSpacing;
                 .box-sizing(border-box);
                 font-size: @fsize_normal;
                 background-color: white;
+
+
+                > .forkMe {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        .backgroundImageWithMinimumSize(url(img/fork-me-on-github.png));
+                        .text-hide();
+                }
         }
 
         > .SubmitForm {
