@@ -1,6 +1,6 @@
 /*
  * DealPort
- * Copyright (c) 2014  DealPort B.V.
+ * Copyright (c) 2015  DealPort B.V.
  *
  * This file is part of DealPort
  *
@@ -21,20 +21,28 @@
  * a) Preservation of all legal notices and author attributions
  */
 
-@import "../../style/layout.less";
-@import "../../style/typography.less";
+@import "layout.less";
+@import "typography.less";
 
-.CompanyDetailPage {
-        > .CompanyHeader {
-                border: 1px solid gray;
-                border-radius: 5px;
+.CompanyContactInfo {
+        position: relative;
+        border: 1px solid gray;
+        border-radius: 5px;
+        font-size: @fsize_normal;
+        background-color: white;
+        overflow: hidden;
+
+        > .title {
                 padding: @baseSpacing;
-                .box-sizing(border-box);
-                background-color: white;
-                overflow: hidden;
+                border-bottom: 1px solid gray;
+                margin: 0;
         }
 
-        > div {
-                margin: @baseSpacing 0;
+        > .CompanyContactTable {
+                padding: @baseSpacing;
+
+                > colgroup > col.caption {
+                        width: 14em;
+                }
         }
 }
