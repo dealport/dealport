@@ -51,6 +51,7 @@
     "on-headers": "^1.0.0",
     "passport": "^0.2.1",
     "passport-facebook": "^1.0.3",
+    "plupload": "^2.1.2",
     "primus": "^2.4.8",
     "primus-emitter": "^3.0.3",
     "primus-multiplex": "^3.1.0",
