@@ -22,6 +22,7 @@
  */
 
 @import "../../swissarmyknife/swissarmyknife.less";
+@import "./typography.less";
 
 @baseWidth: 1220px;
 @baseSpacing: 12px; // dividable by 2, 3, 4 and 6
@@ -68,5 +69,30 @@
         &:nth-child(3n  ) {
                 padding-left : @baseSpacing * (2/3);
                 clear: right;
+        }
+}
+
+.mainBlock {
+        position: relative;
+        border: 1px solid gray;
+        border-radius: 5px;
+        font-size: @fsize_normal;
+        background-color: white;
+        overflow: hidden;
+        padding: @baseSpacing;
+}
+
+.titledMainBlock {
+        .mainBlock;
+        padding: 0;
+
+        > .title {
+                padding: @baseSpacing;
+                border-bottom: 1px solid gray;
+                margin: 0;
+
+                ~ * {
+                        padding: @baseSpacing;
+                }
         }
 }
