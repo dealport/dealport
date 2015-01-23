@@ -21,8 +21,13 @@
  * a) Preservation of all legal notices and author attributions
  */
 
+@import "../../../swissarmyknife/swissarmyknife";
+@import "../../style/layout.less";
+
 .VacancyDetailPage {
         > .header {
+                .clearfix;
+
                 > .logo {
                         float: left;
                         width: 100px;
@@ -35,6 +40,21 @@
                         font-size: 100%;
                         margin: 0 0 8px 108px;
                         word-break: break-all;
+                }
+        }
+
+        > .content {
+                @columnSize: @baseWidth / 2 - @baseSpacing;
+
+                > div {
+                        float: left;
+                        width: @columnSize;
+                        margin: @baseSpacing/2 0;
+
+                        &:nth-child(odd) {
+                                margin-right: @baseSpacing;
+                        }
+
                 }
         }
 }
