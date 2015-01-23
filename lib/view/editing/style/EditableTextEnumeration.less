@@ -30,14 +30,21 @@
                 outline: 1px dashed gray;
                 min-height: 1.4em;
 
-                &.focusin { outline-style: solid !important; }
+                &.focusin {
+                        outline-style: solid !important;
+
+                        > .EditablePlainText {
+                                min-width: 2em;
+                        }
+                }
+
+
         }
 
         > .EditablePlainText { // li
                 margin: 0 0.6em 0 0;
                 padding: 0;
                 display: inline-block;
-                min-width: 2em;
                 min-height: 1.4em; // 1.4 line height
                 vertical-align: bottom;
 
