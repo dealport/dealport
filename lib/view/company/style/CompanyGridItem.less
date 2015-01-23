@@ -21,28 +21,46 @@
  * a) Preservation of all legal notices and author attributions
  */
 
-@import "../../swissarmyknife/swissarmyknife";
-@import "layout.less";
-@import "typography.less";
+@import "../../../swissarmyknife/swissarmyknife";
+@import "../../style/layout.less";
+@import "../../style/typography.less";
 
-.CompanyGridItemPlaceholder {
-        > .StateAnchor {
-                border: 2px dashed gray;
+.CompanyGridItem {
+        position: relative;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: @baseSpacing - 1px;
+        .box-sizing(border-box);
+        font-size: @fsize_normal;
+        background-color: white;
+        overflow: hidden;
+
+        &:not(.editing) {
+                cursor: pointer;
+        }
+
+        > .CompanyHeader {
+
+        }
+
+        > .bottomButtons {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
                 border-radius: 5px;
-                .box-sizing(border-box);
-                font-size: @fsize_normal;
                 text-align: center;
-                display: block;
-                padding: @baseSpacing;
-                .box-sizing(border-box);
 
-                > .text {
-                        vertical-align: middle;
-                        display: inline-block;
-                        line-height: 1.2;
-                        font-size: 200%;
-                        color: gray;
-                        text-decoration: none !important;
+                > .visible {
+                        &:not([data-value]) {
+                                color: #680000;
+                                font-weight: bold;
+                        }
                 }
+        }
+
+        &:not(.editing) > .bottomButtons > .visible[data-value] {
+                display: none;
         }
 }

@@ -21,46 +21,49 @@
  * a) Preservation of all legal notices and author attributions
  */
 
-@import "../../swissarmyknife/swissarmyknife";
-@import "layout.less";
-@import "typography.less";
+@import "../../../swissarmyknife/swissarmyknife";
+@import "../../style/layout.less";
+@import "../../style/typography.less";
 
-.CompanyGridItem {
+.CompanyHeader {
         position: relative;
-        border: 1px solid gray;
-        border-radius: 5px;
-        padding: @baseSpacing - 1px;
-        .box-sizing(border-box);
-        font-size: @fsize_normal;
-        background-color: white;
         overflow: hidden;
+        padding: 1px; // for editing outlines
 
-        &:not(.editing) {
-                cursor: pointer;
+        > .logo {
+                float: left;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                margin: 0 8px 8px 0;
         }
 
-        > .CompanyHeader {
+        > .title {
+                font-size: 100%;
+                margin: 0 0 8px 108px;
+                word-break: break-all;
 
-        }
+                > a {
+                        display: block;
 
-        > .bottomButtons {
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: white;
-                border-radius: 5px;
-                text-align: center;
-
-                > .visible {
-                        &:not([data-value]) {
-                                color: #680000;
-                                font-weight: bold;
+                        > span {
+                                display: block;
                         }
                 }
         }
 
-        &:not(.editing) > .bottomButtons > .visible[data-value] {
-                display: none;
+        > .payoff {
+                margin: 8px 0 8px 108px;
+        }
+
+        > .sectors {
+                clear: both;
+                margin: 8px 0;
+        }
+
+        > .CompanyShortMetaTable {
+                margin: 8px 0 0 0;
+                width: 100%;
+                max-width: 400px;
         }
 }
