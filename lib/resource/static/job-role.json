@@ -1,0 +1,24 @@
+{
+  "name": "job-role",
+  "description": "A list of all the valid job roles that a user is able to select",
+  "value": [
+    {"value": ""                    , "label": "-"},
+    {"value": "attorney"            , "label": "Attorney"},
+    {"value": "backend-developer"   , "label": "Backend Developer"},
+    {"value": "data-scientist"      , "label": "Data Scientist"},
+    {"value": "devops"              , "label": "DevOps"},
+    {"value": "accounting"          , "label": "Finance/Accounting"},
+    {"value": "frontend-developer"  , "label": "Frontend Developer"},
+    {"value": "full-stack-developer", "label": "Full-Stack Developer"},
+    {"value": "hardware-engineer"   , "label": "Hardware Engineer"},
+    {"value": "human-resource"      , "label": "H.R."},
+    {"value": "marketing"           , "label": "Marketing"},
+    {"value": "mobile-developer"    , "label": "Mobile Developer"},
+    {"value": "office-manager"      , "label": "Office Manager"},
+    {"value": "operations"          , "label": "Operations"},
+    {"value": "product-manager"     , "label": "Product Manager"},
+    {"value": "sales"               , "label": "Sales"},
+    {"value": "software-engineer"   , "label": "Software Engineer"},
+    {"value": "ui-designer"         , "label": "UI/UX Designer"}
+  ]
+}
