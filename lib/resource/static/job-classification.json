@@ -1,0 +1,13 @@
+{
+  "name": "job-classification",
+  "description": "A list of all the valid job classifications that a user is able to select",
+  "value": [
+    {"value": "co-founder"            , "label": "Co-founder"            },
+    {"value": "contract"              , "label": "Contract"              },
+    {"value": "full-time"             , "label": "Full-time"             },
+    {"value": "independent-contractor", "label": "Independent contractor"},
+    {"value": "internship"            , "label": "Internship"            },
+    {"value": "part-time"             , "label": "Part-time"             },
+    {"value": "temporary"             , "label": "Temporary"             }
+  ]
+}
