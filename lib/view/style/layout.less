@@ -92,7 +92,11 @@
                 margin: 0;
 
                 ~ * {
-                        margin: @baseSpacing;
+                        margin: 0 @baseSpacing @baseSpacing @baseSpacing;
+                }
+
+                + * {
+                        margin-top: @baseSpacing;
                 }
         }
 }
