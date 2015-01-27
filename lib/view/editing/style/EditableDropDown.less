@@ -1,0 +1,63 @@
+/*
+ * DealPort
+ * Copyright (c) 2015  DealPort B.V.
+ *
+ * This file is part of DealPort
+ *
+ * DealPort is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ *
+ * DealPort is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with DealPort.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * In addition, the following supplemental terms apply, based on section 7 of
+ * the GNU Affero General Public License (version 3):
+ * a) Preservation of all legal notices and author attributions
+ */
+
+.EditableDropDown {
+        &.editing {
+                outline: 1px dashed gray;
+                min-width: 2em;
+                min-height: 1.4em;
+                cursor: pointer;
+
+                &:focus { outline-style: solid !important; }
+                &.open { outline-style: solid !important; }
+        }
+}
+
+.EditableDropDown_Popup {
+        outline: 1px solid grey;
+        background-color: white;
+        overflow-y: auto;
+        z-index: 30000;
+        font-size: 12px;
+
+        > ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+
+                > li {
+                        cursor: pointer;
+                        margin: 0;
+                        padding: 2px 20px;
+
+                        &.selected {
+                                background-color: #d1d1d1;
+                        }
+
+                        &:hover,
+                        &:focus {
+                                background-color: #9a9a9a;
+                        }
+                }
+        }
+}
