@@ -30,7 +30,7 @@
     "clone": "^0.1.19",
     "cookie-parser": "^1.3.3",
     "deep-equal": "^0.2.1",
-    "domv": "^0.2.3",
+    "domv": "^1.0.0",
     "ejson": "^1.0.1",
     "engine.io": "^1.4.0",
     "es6-map": "^0.1.1",
