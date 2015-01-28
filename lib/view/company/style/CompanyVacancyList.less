@@ -21,8 +21,20 @@
  * a) Preservation of all legal notices and author attributions
  */
 
+@import "../../style/typography";
+
 .CompanyVacancyList {
         .titledMainBlock;
+        position: relative;
+
+        > .addVacancy {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                .a();
+                &.visible { display: block; }
+        }
 
         > ul {
                 margin: 0 !important;

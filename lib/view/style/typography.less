@@ -29,11 +29,29 @@ html {
         font-family: verdana, tahoma, sans-serif;
 }
 
+
 a {
         color: #79594f;
         text-decoration: none;
 
-        &:link:hover {
+        &:link {
+                cursor: pointer;
+
+                &:hover {
+                        text-decoration: underline;
+                }
+        }
+}
+
+.a() {
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: #79594f;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
                 text-decoration: underline;
         }
 }
