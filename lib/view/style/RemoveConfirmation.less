@@ -1,6 +1,6 @@
 /*
  * DealPort
- * Copyright (c) 2014  DealPort B.V.
+ * Copyright (c) 2015  DealPort B.V.
  *
  * This file is part of DealPort
  *
@@ -21,34 +21,28 @@
  * a) Preservation of all legal notices and author attributions
  */
 
-@import "../../style/layout.less";
-@import "../../style/typography.less";
+@import "./layout";
+@import "./typography";
 
-.CompanyDetailPage {
-        > .CompanyHeader {
-                .mainBlock;
-                .box-sizing(border-box);
-        }
+.RemoveConfirmation {
+        font-size: @fsize_normal;
+        background-color: white;
+        position: relative;
+        padding: @baseSpacing;
 
-        > div {
-                margin: @baseSpacing 0;
-        }
+        > .buttons {
+                text-align: center;
 
-        > .RemoveConfirmation {
-                z-index: 10000;
-
-                @media screen and (min-width: 800px) {
-                        position: fixed;
-                        top: 20%;
-                        left: 50%;
-                        width: 500px;
-                        margin-left: 500px / -2;
-                        border: 1px solid gray;
-                        border-radius: 5px;
+                > * {
+                        .roundButton();
                 }
 
-                @media screen and (max-width: 799px) {
-                        margin: 0 -@baseSpacing;
+                > .remove {
+                        background-color: #770006;
+
+                        &:hover {
+                                background-color: darken(#770006, 10%);
+                        }
                 }
         }
 }
