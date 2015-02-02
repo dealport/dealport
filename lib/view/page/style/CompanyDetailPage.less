@@ -51,4 +51,15 @@
                         margin: 0 -@baseSpacing;
                 }
         }
+
+        > .footerStuff {
+                text-align: center;
+                font-size: @fsize_normal * 0.9;
+
+                > .removeButton { display: none; }
+        }
+
+        &.canEdit > .footerStuff > .removeButton {
+                display: block;
+        }
 }
