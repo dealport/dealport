@@ -21,17 +21,36 @@
  * a) Preservation of all legal notices and author attributions
  */
 
+@import "../../../swissarmyknife/swissarmyknife";
 @import "../../style/layout.less";
 @import "../../style/typography.less";
 
 .CompanyDetailPage {
-        > .CompanyHeader {
-                .mainBlock;
-                .box-sizing(border-box);
+        > .left, > .right {
+                float: left;
+                .clearfix();
+
+                > div {
+                        margin: @baseSpacing 0;
+                }
         }
 
-        > div {
-                margin: @baseSpacing 0;
+        > .left {
+                width: 75%;
+                padding-right: @baseSpacing / 2;
+                .box-sizing(border-box);
+
+
+                > .CompanyHeader {
+                        .mainBlock;
+                        .box-sizing(border-box);
+                }
+        }
+
+        > .right {
+                width: 25%;
+                padding-left: @baseSpacing / 2;
+                .box-sizing(border-box);
         }
 
         > .RemoveConfirmation {
@@ -53,6 +72,7 @@
         }
 
         > .footerStuff {
+                clear: both;
                 text-align: center;
                 font-size: @fsize_normal * 0.9;
 
