@@ -28,8 +28,10 @@
         padding: 0;
 
         > a {
+                position: relative;
                 display: block;
                 padding: @baseSpacing;
+                padding-right: @baseSpacing + 20px; // reserve space for the arrow
                 color: inherit;
                 text-decoration: none !important;
 
@@ -39,6 +41,16 @@
 
                 > .title {
                         margin: 0;
+                }
+
+                &:after {
+                        position: absolute;
+                        right: @baseSpacing;
+                        top: 50%;
+                        content: '➔';
+                        line-height: 1;
+                        margin-top: -10px;
+                        font-size: 20px;
                 }
         }
 
