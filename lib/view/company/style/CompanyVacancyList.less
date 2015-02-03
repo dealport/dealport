@@ -21,31 +21,41 @@
  * a) Preservation of all legal notices and author attributions
  */
 
+@import "../../../swissarmyknife/swissarmyknife";
 @import "../../style/typography";
 
 .CompanyVacancyList {
         .titledMainBlock;
         position: relative;
 
-        > .addVacancy {
-                display: none;
-                position: absolute;
-                top: 0;
-                right: 0;
-                .a();
-                &.visible { display: block; }
-        }
-
         > ul {
-                margin: 0 !important;
+                margin: 0!important;
                 padding: 0;
                 list-style-type: none;
 
                 > li {
+                        border-top: 1px solid gray;
                         border-bottom: 1px solid gray;
-                        &:last-child {
-                                border-bottom: none;
-                        }
+                        margin: -1px 0;
                 }
+        }
+
+        > .addVacancy {
+                display: none;
+                .a();
+                width: 100%;
+                font-size: @fsize_normal;
+                padding: 38px 0;
+                margin: -1px 0;
+                text-align: center;
+                border-top: 1px solid gray;
+
+                &:hover {
+                        background-color: #e1e1e1;
+                }
+        }
+
+        &.canEdit > .addVacancy {
+                display: block;
         }
 }
