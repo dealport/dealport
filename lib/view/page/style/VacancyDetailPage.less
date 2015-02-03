@@ -28,29 +28,31 @@
         > .header {
                 .clearfix;
 
-                > .logo {
-                        float: left;
-                        width: 100px;
-                        height: 100px;
-                        line-height: 100px;
-                        margin: 0 8px 8px 0;
+                > .CompanyHeader {
+                        float: right;
+                        width: 300px;
+                        background-color: white;
+                        border: 1px solid gray;
+                        border-radius: 5px;
+                        padding: @baseSpacing;
+                        margin-bottom: @baseSpacing/2;
                 }
 
                 > .title {
                         font-size: 100%;
-                        margin: 0 0 8px 108px;
                         word-break: break-all;
                 }
         }
 
         > .content {
                 .clearfix;
-                @columnSize: @baseWidth / 2 - @baseSpacing;
+                @columnSize: @baseWidth / 2 - (@baseSpacing/2);
 
                 > div {
                         float: left;
                         width: @columnSize;
                         margin: @baseSpacing/2 0;
+                        .box-sizing(border-box);
 
                         &:nth-child(odd) {
                                 margin-right: @baseSpacing;
