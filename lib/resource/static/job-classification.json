@@ -2,6 +2,7 @@
   "name": "job-classification",
   "description": "A list of all the valid job classifications that a user is able to select",
   "value": [
+    {"value": ""                      , "label": "-"                     },
     {"value": "co-founder"            , "label": "Co-founder"            },
     {"value": "contract"              , "label": "Contract"              },
     {"value": "full-time"             , "label": "Full-time"             },
