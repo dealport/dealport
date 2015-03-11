@@ -36,6 +36,7 @@
     "es6-map": "^0.1.1",
     "express": "^4.9.0",
     "express-session": "^1.9.1",
+    "ga-browser": "^1.0.0",
     "generic-pool": "^2.1.1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-less": "^1.0.0",
