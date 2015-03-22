@@ -39,6 +39,7 @@
     "express-session": "^1.9.1",
     "ga-browser": "^1.0.0",
     "generic-pool": "^2.1.1",
+    "grunt-contrib-less": "^1.0.0",
     "image-size": "^0.3.5",
     "inherits": "^2.0.1",
     "lazy-timer": "0.0.0",

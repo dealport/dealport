@@ -57,7 +57,9 @@ module.exports = function(grunt)
                         options: {
                                 dumpLineNumbers: config.debugMode ? 'comments' : false,
                                 sourceMap: true,
-                                relativeUrls: true
+                                relativeUrls: true,
+                                sourceMapFilename: 'generated-web/bundle.css.map',
+                                sourceMapURL: '/bundle.css.map'
                         },
                         build: {
                                 src: ['generated-web/bundle.less'],
