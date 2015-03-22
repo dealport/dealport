@@ -22,6 +22,8 @@
  */
 'use strict';
 
+var config = require('./lib/server-config');
+
 module.exports = function(grunt)
 {
         grunt.initConfig({
@@ -33,7 +35,7 @@ module.exports = function(grunt)
                 browserify: {
                         options: {
                                 browserifyOptions: {
-                                        debug: true
+                                        debug: !!config.debugMode
                                 }
                         },
                         build: {
@@ -53,7 +55,7 @@ module.exports = function(grunt)
                 },
                 less: {
                         options: {
-                                dumpLineNumbers: 'comments',
+                                dumpLineNumbers: config.debugMode ? 'comments' : false,
                                 sourceMap: true,
                                 relativeUrls: true
                         },
